@@ -10,11 +10,9 @@ function drawGrid(){
         newDiv.setAttribute("class", "testDivs");
     
         newDiv.addEventListener("mouseenter", ()=>{
-            newDiv.style.backgroundColor = "lightgray";
+            newDiv.style.backgroundColor = "black";
         });
-        newDiv.addEventListener("mouseleave", ()=>{
-            newDiv.style.backgroundColor = "white";
-        })
+        
     
         container.appendChild(newDiv);
     }
@@ -25,8 +23,9 @@ function drawGrid(){
 const popUpButton = document.createElement("button");
 popUpButton.textContent = "New Grid Size";
 popUpButton.addEventListener("click", ()=>{
-    currentDimension = prompt("Enter new Grid dimension")
+    currentDimension = prompt("Enter new Grid dimension 1-100")
     currentDimension = currentDimension * currentDimension
+    
     changeGrid()
 })
 document.body.appendChild(popUpButton)
@@ -39,7 +38,6 @@ function changeGrid(){
     drawGrid()
 
 
-    alert("dun")
 }
 
 drawGrid()
