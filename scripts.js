@@ -5,8 +5,18 @@ const container = document.querySelector("div");
 for(i = 0; i < 256; i++){
     const newDiv = document.createElement("div");
     newDiv.setAttribute("class", "testDivs");
+
+    newDiv.addEventListener("mouseenter", ()=>{
+        newDiv.style.backgroundColor = "lightgray";
+    });
+    newDiv.addEventListener("mouseleave", ()=>{
+        newDiv.style.backgroundColor = "white";
+    })
+
     container.appendChild(newDiv);
 }
+
+
     
    
 

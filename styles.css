@@ -1,9 +1,23 @@
 .container{
     display:flex;
-    border: 1px solid black;  
+    border: 1px solid black;
+    width: 545px;
+    height: 545px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .testDivs{
+    min-height: 20px;
+    min-width: 20px;
     display:flex;
-    border:1px solid red;
+    border:2px solid red;
+    padding:5px;
+
+
+}
+
+body{
+    display:flex;
+    justify-content: center;
 }
