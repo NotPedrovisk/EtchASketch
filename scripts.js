@@ -1,11 +1,15 @@
 const container = document.querySelector("div");
 
 
-//create a loop maybe for creating 16x16 divs
+//used for generating grid
 let currentRow = 16
 let currentColumn = 16
 
+
 function drawGrid(){
+    const containerSize = 600;
+    const cellSize = containerSize/currentRow;
+
     for(let i = 0; i < currentRow; i++){
         const newRow = document.createElement("div");
         newRow.setAttribute("class", "row");
@@ -13,6 +17,7 @@ function drawGrid(){
         for(let n = 0; n < currentColumn; n++){
             const newColumn = document.createElement("div");
             newColumn.setAttribute("class", "column");
+           
 
             newColumn.addEventListener("mouseenter", ()=>{
                 newColumn.style.backgroundColor = "black";
@@ -25,6 +30,7 @@ function drawGrid(){
 
         container.appendChild(newRow);
     }
+
 }
 
 
@@ -32,15 +38,23 @@ function drawGrid(){
 const popUpButton = document.createElement("button");
 popUpButton.textContent = "New Grid Size";
 popUpButton.addEventListener("click", ()=>{
-    currentRow = prompt("Enter new Grid dimension 1-100")
-    currentColumn = currentRow
+    let input = prompt("Enter new Grid dimension 1-100");
+    let size = parseInt(input);
+
+    if (!Number.isInteger(size) || size <1 || size >100){
+        alert("Invalid input. Please enter number between 1 and 100");
+        return;
+    }
+
+    currentRow = size;
+    currentColumn = size;
     
     
     changeGrid()
 })
 document.body.appendChild(popUpButton)
    
-
+//deletes old grid and draws new one
 function changeGrid(){
     while (container.firstChild){
         container.removeChild(container.firstChild);
@@ -51,4 +65,3 @@ function changeGrid(){
 }
 
 drawGrid()
-console.log(container.children.length)
