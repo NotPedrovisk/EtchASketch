@@ -1,31 +1,29 @@
+
+
+
+
 .container{
-    display:flex;
-    max-width: 70%;
-    border: 1px solid black;
-    justify-content:center;
-    flex-wrap: wrap;
-    flex: 1;
-}
-
-.testDivs{
-    max-height: 20px;
-    max-width: 20px;
-    display:flex;
-    padding:5px;
-    flex-grow:0;
-    flex-shrink: 1;
-
+    max-width: 1200px;
+    margin:0 auto;
+    border:2px solid black;
 
 }
 
-
-
-body{
+.row{
     display:flex;
-    justify-content: center;
-    align-items: center;
+    gap:2px;
+    margin-bottom: 2px;
 }
+
+.column{
+    flex:1;
+    background-color: white;
+    padding: 1rem 0;
+}
+
 button{
     display: flex;
-    align-self: flex-start;
+    justify-self: center;
+    margin-top:10px;
+    
 }

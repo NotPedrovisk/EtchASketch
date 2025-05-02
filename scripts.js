@@ -1,20 +1,29 @@
 const container = document.querySelector("div");
 
 
-//create a loop maybe for creating 16x16 divs, or 256 total
-let currentDimension = 256
+//create a loop maybe for creating 16x16 divs
+let currentRow = 16
+let currentColumn = 16
 
 function drawGrid(){
-    for(i = 0; i < currentDimension; i++){
-        const newDiv = document.createElement("div");
-        newDiv.setAttribute("class", "testDivs");
-    
-        newDiv.addEventListener("mouseenter", ()=>{
-            newDiv.style.backgroundColor = "black";
-        });
+    for(let i = 0; i < currentRow; i++){
+        const newRow = document.createElement("div");
+        newRow.setAttribute("class", "row");
         
-    
-        container.appendChild(newDiv);
+        for(let n = 0; n < currentColumn; n++){
+            const newColumn = document.createElement("div");
+            newColumn.setAttribute("class", "column");
+
+            newColumn.addEventListener("mouseenter", ()=>{
+                newColumn.style.backgroundColor = "black";
+            });
+
+            newRow.appendChild(newColumn);
+            console.log("1")
+
+        }
+
+        container.appendChild(newRow);
     }
 }
 
@@ -23,8 +32,9 @@ function drawGrid(){
 const popUpButton = document.createElement("button");
 popUpButton.textContent = "New Grid Size";
 popUpButton.addEventListener("click", ()=>{
-    currentDimension = prompt("Enter new Grid dimension 1-100")
-    currentDimension = currentDimension * currentDimension
+    currentRow = prompt("Enter new Grid dimension 1-100")
+    currentColumn = currentRow
+    
     
     changeGrid()
 })
