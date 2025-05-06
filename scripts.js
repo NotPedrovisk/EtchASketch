@@ -7,16 +7,20 @@ let currentColumn = 16
 
 
 function drawGrid(){
-    const containerSize = 600;
-    const cellSize = containerSize/currentRow;
+    const CONTAINERSIZE = 600;
+    const cellSize = CONTAINERSIZE/currentRow;
 
+    //first creates rows
     for(let i = 0; i < currentRow; i++){
         const newRow = document.createElement("div");
         newRow.setAttribute("class", "row");
-        
+        newRow.style.height = "${cellSize}px";
+
+        //then creates columns
         for(let n = 0; n < currentColumn; n++){
             const newColumn = document.createElement("div");
             newColumn.setAttribute("class", "column");
+            newColumn.style.height = "${cellSize}px";
            
 
             newColumn.addEventListener("mouseenter", ()=>{
@@ -24,10 +28,9 @@ function drawGrid(){
             });
 
             newRow.appendChild(newColumn);
-            console.log("1")
-
+            
         }
-
+        console.log(cellSize)
         container.appendChild(newRow);
     }
 
