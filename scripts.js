@@ -57,7 +57,21 @@ popUpButton.addEventListener("click", ()=>{
     
     changeGrid()
 })
-document.body.appendChild(popUpButton)
+document.body.appendChild(popUpButton);
+
+const gridButton = document.createElement("button");
+gridButton.textContent = "Toggle Grid"
+gridButton.addEventListener("click", ()=>{
+    //gets all elements with column class and returns an HTMLCollection, kinda like an array, but different
+    const columns = document.getElementsByClassName("column");
+    //turns the collection into an array to use forEach()
+    [...columns].forEach(el=>{
+        el.classList.toggle("nogrid");
+    })
+})
+
+document.body.appendChild(gridButton);
+
 
 const footer = document.createElement("footer");
 footer.textContent = "Made by NotPedrovisk";
