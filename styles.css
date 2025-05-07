@@ -4,6 +4,7 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: indianred;
 }
 
 .container{
@@ -14,8 +15,8 @@ body{
     flex:0 1 auto;
     flex-flow:column wrap;
     margin:0 auto;
-    
 }
+
 
 .row{
     display:flex;
@@ -34,5 +35,16 @@ button{
     display: flex;
     justify-self: center;
     margin-top:10px;
+    
+}
+
+footer{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    text-align: center;
+    background-color: lavender;
+    padding:8px;
+    
     
 }

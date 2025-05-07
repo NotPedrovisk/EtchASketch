@@ -1,6 +1,8 @@
 const container = document.querySelector("div");
 
 
+
+
 //used for generating grid
 let currentRow = 16
 let currentColumn = 16
@@ -56,6 +58,10 @@ popUpButton.addEventListener("click", ()=>{
     changeGrid()
 })
 document.body.appendChild(popUpButton)
+
+const footer = document.createElement("footer");
+footer.textContent = "Made by NotPedrovisk";
+document.body.appendChild(footer)
    
 //deletes old grid and draws new one
 function changeGrid(){
